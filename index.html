@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <!-- tailwind cdn -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Nature's Platter</title>
+    <!-- css  -->
+    <style type="text/tailwindcss">
+        @theme {
+            /* color */
+            --color-base: #179800;
+            --color-auxiliary: #EFEBE3;
+            --color-sidekick: #111111;
+            /* font */
+            --font-sora: "Sora", serif;
+        }
+        @layer base {
+            .max-w-custom {
+                max-width: 82.5rem; 
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- script  -->
+ 
+</head>
+<body>
+   <!-- navbar -->
+    <div class="font-sora">
+        <header class="w-full bg-auxiliary py-8 px-4 " >
+            <nav class="max-w-custom mx-auto flex justify-between">
+                <!-- logo -->
+                <div>
+                    <img src="c2-assets/mobile-logo.png" alt="" class="md:hidden">
+                    <img src="c2-assets/logo-header.png" alt="header-logo" class="hidden md:block">
+                </div>
+                <!-- menu -->
+                 <ul class="flex gap-8 justify-between ">
+                    <li class="list-none"><a href="#" class="no-underline text-sidekick ">Home</a></li>
+                 </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+</html>
