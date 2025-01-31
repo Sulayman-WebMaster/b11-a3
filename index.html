@@ -25,26 +25,75 @@
                 max-width: 82.5rem; 
             }
         }
+    #menu-toggle:checked + label div:first-child {
+      transform: rotate(45deg) translateY(7px);
+    }
+    #menu-toggle:checked + label div:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + label div:last-child {
+      transform: rotate(-45deg) translateY(-7px);
+    }
     </style>
     <link rel="stylesheet" href="style.css">
     <!-- script  -->
  
 </head>
 <body>
-   <!-- navbar -->
+   <!-- Header -->
     <div class="font-sora">
-        <header class="w-full bg-auxiliary py-8 px-4 " >
-            <nav class="max-w-custom mx-auto flex justify-between">
+        <header class="w-full bg-auxiliary pt-8 px-4 mb-24 " >
+            <!-- navbar -->
+            <nav class="max-w-custom mx-auto flex gap-2 justify-between items-center">
                 <!-- logo -->
                 <div>
-                    <img src="c2-assets/mobile-logo.png" alt="" class="md:hidden">
-                    <img src="c2-assets/logo-header.png" alt="header-logo" class="hidden md:block">
+                    <img src="c2-assets/mobile-logo.png" alt="" class="md:hidden cursor-pointer">
+                    <img src="c2-assets/logo-header.png" alt="header-logo" class="hidden md:block cursor-pointer">
                 </div>
                 <!-- menu -->
-                 <ul class="flex gap-8 justify-between ">
-                    <li class="list-none"><a href="#" class="no-underline text-sidekick ">Home</a></li>
+                 <ul class=" gap-8 justify-between hidden md:flex ">
+                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-base after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100" ><a href="#" class="no-underline text-sidekick text-xl hover:underline-offset-1 hover:">Product</a></li>
+                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-base after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Services</a></li>
+                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-base after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Contact us</a></li>
                  </ul>
+                 <!-- humburger -->
+                 <div class="md:hidden">
+                    <input type="checkbox" id="menu-toggle" class="hidden">
+                    <label for="menu-toggle" class="block cursor-pointer p-2 ">
+                      <div class="w-6 h-0.5 bg-base my-1 transition-transform duration-300"></div>
+                      <div class="w-6 h-0.5 bg-base my-1 transition-opacity duration-300"></div>
+                      <div class="w-6 h-0.5 bg-base my-1 transition-transform duration-300"></div>
+                    </label>
+                  </div>
+                 <!-- icons -->
+                  <div class=" gap-3 items-center hidden md:flex">
+                  <div class="flex gap-4 justify-between">
+                    <a href="#" class="text-sidekick"><img  class="transform transition-transform duration-300 hover:scale-130"src="c2-assets/search-icon.png" alt="search"></a>
+                    <a href="#" class="text-sidekick"><img class="transform transition-transform duration-300 hover:scale-130" src="c2-assets/card-icon.png" alt="search"></a>
+                  </div>
+                  <!-- buttons -->
+                   <div class="flex gap-2">
+                    <button class="text-sidekick text-lg py-2 px-6 border border-base rounded-lg transition-colors duration-300 hover:text-white hover:bg-base "><a href="#" >Login</a></button>
+                    <button class="text-white text-lg bg-base py-2 px-9  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-base"><a href="#" >Register</a></button>
+                   </div>
+                </div>
+                
+
+
             </nav>
+           <!-- hero -->
+            <div class="max-w-custom flex flex-col gap-9 items-center justify-items-center mt-20 mx-auto">
+                <div>
+                    <h1 class=" text-4xl md:text-6xl font-semibold text-sidekick text-center">Freshness <span class="text-base">You Can</span><br>
+                    <span class="text-base">Count</span> On, Prices You’ll Love!</h1>
+                    <p class="text-sidekick text-base md:text-xl text-center my-8">Shop your daily essentials at unbeatable prices. From fresh produce to pantry <br> staples, we’ve got you covered every day!</p>
+                </div>
+                <div>
+                    <img src="c2-assets/hero-vegetables.png" alt="hero-image" class="w-full">
+                </div>
+
+
+            </div>
         </header>
     </div>
 </body>
