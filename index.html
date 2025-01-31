@@ -7,6 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- tailwind cdn -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>Nature's Platter</title>
@@ -14,11 +20,16 @@
     <style type="text/tailwindcss">
         @theme {
             /* color */
-            --color-base: #179800;
+            --color-lead: #179800;
             --color-auxiliary: #EFEBE3;
             --color-sidekick: #111111;
+            --color-gradient:#53DB3A;
+            --color-section1:#115414;
+            --color-section2:#102861;
             /* font */
             --font-sora: "Sora", serif;
+            --font-adlam: "ADLaM Display", serif;
+            --font-poppins: "Poppins", serif;
         }
         @layer base {
             .max-w-custom {
@@ -33,6 +44,12 @@
     }
     #menu-toggle:checked + label div:last-child {
       transform: rotate(-45deg) translateY(-7px);
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #EFEBE3, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     </style>
     <link rel="stylesheet" href="style.css">
@@ -52,17 +69,17 @@
                 </div>
                 <!-- menu -->
                  <ul class=" gap-8 justify-between hidden md:flex ">
-                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-base after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100" ><a href="#" class="no-underline text-sidekick text-xl hover:underline-offset-1 hover:">Product</a></li>
-                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-base after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Services</a></li>
-                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-base after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Contact us</a></li>
+                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-lead after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100" ><a href="#" class="no-underline text-sidekick text-xl hover:underline-offset-1 hover:">Product</a></li>
+                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-lead after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Services</a></li>
+                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-lead after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Contact us</a></li>
                  </ul>
                  <!-- humburger -->
                  <div class="md:hidden">
                     <input type="checkbox" id="menu-toggle" class="hidden">
                     <label for="menu-toggle" class="block cursor-pointer p-2 ">
-                      <div class="w-6 h-0.5 bg-base my-1 transition-transform duration-300"></div>
-                      <div class="w-6 h-0.5 bg-base my-1 transition-opacity duration-300"></div>
-                      <div class="w-6 h-0.5 bg-base my-1 transition-transform duration-300"></div>
+                      <div class="w-6 h-0.5 bg-lead my-1 transition-transform duration-300"></div>
+                      <div class="w-6 h-0.5 bg-lead my-1 transition-opacity duration-300"></div>
+                      <div class="w-6 h-0.5 bg-lead my-1 transition-transform duration-300"></div>
                     </label>
                   </div>
                  <!-- icons -->
@@ -73,8 +90,8 @@
                   </div>
                   <!-- buttons -->
                    <div class="flex gap-2">
-                    <button class="text-sidekick text-lg py-2 px-6 border border-base rounded-lg transition-colors duration-300 hover:text-white hover:bg-base "><a href="#" >Login</a></button>
-                    <button class="text-white text-lg bg-base py-2 px-9  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-base"><a href="#" >Register</a></button>
+                    <button class="text-sidekick text-lg py-2 px-6 border border-lead rounded-lg transition-colors duration-300 hover:text-white hover:bg-lead "><a href="#" >Login</a></button>
+                    <button class="text-white text-lg bg-lead py-2 px-9  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#" >Register</a></button>
                    </div>
                 </div>
                 
@@ -84,17 +101,218 @@
            <!-- hero -->
             <div class="max-w-custom flex flex-col gap-9 items-center justify-items-center mt-20 mx-auto">
                 <div>
-                    <h1 class=" text-4xl md:text-6xl font-semibold text-sidekick text-center">Freshness <span class="text-base">You Can</span><br>
-                    <span class="text-base">Count</span> On, Prices You’ll Love!</h1>
+                    <h1 class=" text-4xl md:text-6xl font-semibold text-sidekick text-center">Freshness <span class="text-lead">You Can</span><br>
+                    <span class="text-lead">Count</span> On, Prices You’ll Love!</h1>
                     <p class="text-sidekick text-base md:text-xl text-center my-8">Shop your daily essentials at unbeatable prices. From fresh produce to pantry <br> staples, we’ve got you covered every day!</p>
                 </div>
                 <div>
                     <img src="c2-assets/hero-vegetables.png" alt="hero-image" class="w-full">
                 </div>
-
-
             </div>
         </header>
+        <!-- services section  -->
+         <section class="max-w-custom  mx-auto">
+            <h1 class="text-lead text-3xl font-semibold text-start mb-12 mx-4 md:mx-0">Services</h1>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mx-4 mb-24 md:mx-0">
+                <div class="flex-1 bg-auxiliary text-center p-8 rounded-2xl ">
+                    <img src="c2-assets/service.png" alt="service" class="mx-auto mb-6 bg-white rounded-full p-6">
+                    <h3 class="text-sidekick text-2xl font-semibold mb-3">24/7 Services </h3>
+                    <p>We provide 24/7 services. There are a dedicated team to support you. So, feel free to contact us</p>
+                </div>
+                <div class=" flex-1 bg-auxiliary text-center p-8 rounded-2xl ">
+                    <img src="c2-assets/delivery.png" alt="service" class="mx-auto mb-6 bg-white rounded-full p-6">
+                    <h3 class="text-sidekick text-2xl font-semibold mb-3">Fast Delivery</h3>
+                    <p>Our delivery system is one of the best delivery system in the world. that the order will be delivered as few hours</p>
+                </div>
+                <div class="flex-1 bg-auxiliary text-center p-8 rounded-2xl ">
+                    <img src="c2-assets/healthy.png" alt="service" class="mx-auto mb-6 bg-white rounded-full p-6">
+                    <h3 class="text-sidekick text-2xl font-semibold mb-3">Healthy Products</h3>
+                    <p>We collect the fresh and healthy vegetalbes direct from the firmer and store in a natural store room</p>
+                </div>
+            
+            </div>
+        </section>
+         <!-- popular product  -->
+          <section class="w-full bg-auxiliary">
+            <div class="max-w-custom mx-auto py-32">
+                <h1 class="text-lead text-3xl font-semibold text-start mb-12  mx-4 md:mx-0">Popular Products</h1>
+                <!-- layout -->
+                 <div class="grid grid-cols-2 gap-6 md:grid-cols-5 mx-4 md:mx-0  ">
+                    <div class="col-span-2 row-span-3 flex flex-col gap-2 pt-12 pl-4 md:pl-8 md:pr-1 rounded-xl bg-gradient-to-br from-gradient to-white">
+                        <h2 class="text-gradient text-3xl  font-adlam mb-2 md:mb-5 ">30% Off</h2>
+                        <p class="text-sidekick text-base">Discover a world of treats, toys, and <br> essentials handpicked for</p>
+                        <div>
+                            <button class="text-sidekick text-lg font-semibold bg-white py-3 px-5  rounded-lg transition-colors duration-300 hover:text-white hover:bg-lead "><a href="#">Buy Now</a></button>
+                        </div>
+                        <div class="ml-auto ">
+                            <img src="c2-assets/vegetable-offer.png" alt="vegetable" class="  md:-mt-14">
+                        </div>
+                        
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+          </section>
+          <!-- Arrival & Offers -->
+           <section class="max-w-custom mx-auto">
+            <div class="mt-32 mx-4 md:mx-0">
+                <h1 class="text-lead text-3xl font-semibold text-start mb-12 mx-4 md:mx-0">Arrival & Offers</h1>
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-5 ">
+                    <div class="col-span-3 flex items-center justify-between bg-section1 rounded-3xl ">
+                        <div class="flex flex-col gap-6 md:gap-8 m-8 mt-8">
+                            <img src="c2-assets/dawat-logo.png" alt="dawat-logo" class="w-[246.63px]">
+                            <button class="text-white font-poppins text-base bg-[#63B76D] py-3 px-18  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#">Cook Exotic Dishes</a></button>
+                            <h2 class="text-white font-poppins text-4xl">UP to <span class="font-bold">20% OFF</span></h2>
+                        </div>
+                        <div>
+                            <img src="c2-assets/dawat-mock-up.png" alt="dawat-mock-up" class=" w-full md:gap-4 m-8 mt-8">
+                        </div>
+                    </div>
+                    <div class="col-span-2 flex justify-between items-center bg-section2 rounded-3xl ">
+                        <div class="flex flex-col gap-8 m-8 mt-8 mr-1">
+                            <img src="c2-assets/india-gate-logo.png" alt="dawat-logo" class=" w-[93.57px]">
+                            <button class="text-white font-poppins text-base bg-[#63B76D] py-3 px-18  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#">World’s No.1 Rice</a></button>
+                            <h2 class="text-white font-poppins text-4xl">UP to <span class="font-bold">40% OFF</span></h2>
+                        </div>
+                        <div>
+                            <img src="c2-assets/india-gate-mock-up.png" alt="dawat-mock-up" class=" w-[80%] md:gap-4 m-8 mt-8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </section>
+           <!-- footer -->
+            <footer class="w-full bg-lead mt-60">
+                <section class="max-w-custom mx-auto">
+                    <div class="bg-auxiliary flex flex-col md:flex-row justify-around  items-center rounded-3xl ">
+                        <div>
+                            <img src="c2-assets/vegetable-busket.png" class="w-full">
+                        </div>
+                        <div class="flex flex-col gap-5">
+                            <h1 class="text-sidekick font-semibold text-3xl">Get Grocery News!</h1>
+                            <p class="text-sidekick">Exclusive training tips, ticks, product deals and more.</p>
+                            <input class="placeholder:text-[#C4C4C4] placeholder:text-base text" type="text" placeholder="Enter Email...">
+
+                        </div>
+
+                    </div>
+                </section>
+
+            </footer>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </body>
 </html>
