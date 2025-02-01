@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Platter</title>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,6 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- tailwind cdn -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <title>Nature's Platter</title>
     <!-- css  -->
     <style type="text/tailwindcss">
         @theme {
@@ -36,15 +36,6 @@
                 max-width: 82.5rem; 
             }
         }
-    #menu-toggle:checked + label div:first-child {
-      transform: rotate(45deg) translateY(7px);
-    }
-    #menu-toggle:checked + label div:nth-child(2) {
-      opacity: 0;
-    }
-    #menu-toggle:checked + label div:last-child {
-      transform: rotate(-45deg) translateY(-7px);
-    }
     .text-gradient {
       background: linear-gradient(to right, #EFEBE3, #ffffff);
       -webkit-background-clip: text;
@@ -52,39 +43,36 @@
       background-clip: text;
     }
     </style>
-    <link rel="stylesheet" href="style.css">
-    <!-- script  -->
- 
 </head>
 <body>
    <!-- Header -->
     <div class="font-sora">
-        <header class="w-full bg-auxiliary pt-8 px-4 mb-24 " >
+        <header class="w-full bg-auxiliary md:pt-8 md:px-4 mb-24 " >
             <!-- navbar -->
-            <nav class="max-w-custom mx-auto flex gap-2 justify-between items-center">
+            <nav class="max-w-custom mx-auto flex gap-2 justify-between items-center p-4 border border-lead md:border-none">
                 <!-- logo -->
                 <div>
                     <img src="c2-assets/mobile-logo.png" alt="" class="md:hidden cursor-pointer">
-                    <img src="c2-assets/logo-header.png" alt="header-logo" class="hidden md:block cursor-pointer">
+                    <img src="c2-assets/logo-header.png" alt="header-logo" class="hidden md:w-1/2 lg:w-full md:block cursor-pointer">
                 </div>
                 <!-- menu -->
                  <ul class=" gap-8 justify-between hidden md:flex ">
-                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-lead after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100" ><a href="#" class="no-underline text-sidekick text-xl hover:underline-offset-1 hover:">Product</a></li>
-                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-lead after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Services</a></li>
-                    <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-lead after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-sidekick text-xl ">Contact us</a></li>
+                    <li><a href="#" class="text-sidekick md:text-sm lg:text-xl hover:underline  hover:cursor-pointer hover:decoration-lead">Product</a></li>
+                    <li><a href="#" class="text-sidekick md:text-sm lg:text-xl hover:underline  hover:cursor-pointer hover:decoration-lead">Services</a></li>
+                    <li><a href="#" class="text-sidekick md:text-sm lg:text-xl hover:underline  hover:cursor-pointer hover:decoration-lead">Contact us</a></li>
                  </ul>
                  <!-- humburger -->
                  <div class="md:hidden">
                     <input type="checkbox" id="menu-toggle" class="hidden">
-                    <label for="menu-toggle" class="block cursor-pointer p-2 ">
-                      <div class="w-6 h-0.5 bg-lead my-1 transition-transform duration-300"></div>
-                      <div class="w-6 h-0.5 bg-lead my-1 transition-opacity duration-300"></div>
-                      <div class="w-6 h-0.5 bg-lead my-1 transition-transform duration-300"></div>
+                    <label class="block cursor-pointer p-2">
+                      <div class="w-6 h-0.5 bg-lead my-1 "></div>
+                      <div class="w-6 h-0.5 bg-lead my-1 "></div>
+                      <div class="w-6 h-0.5 bg-lead my-1 "></div>
                     </label>
                   </div>
                  <!-- icons -->
                   <div class=" gap-3 items-center hidden md:flex">
-                  <div class="flex gap-4 justify-between">
+                  <div class="gap-4 justify-between hidden md:flex">
                     <a href="#" class="text-sidekick"><img  class="transform transition-transform duration-300 hover:scale-130"src="c2-assets/search-icon.png" alt="search"></a>
                     <a href="#" class="text-sidekick"><img class="transform transition-transform duration-300 hover:scale-130" src="c2-assets/card-icon.png" alt="search"></a>
                   </div>
@@ -237,7 +225,7 @@
                             <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
                         </div>
                     </div>
-                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                    <div class="hidden md:flex items-center p-2 gap-4 bg-white rounded-xl ">
                         <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
                         <div class="flex flex-col gap-1">
                             <div class="flex gap-3 items-center">
@@ -260,8 +248,8 @@
                     <div class=" md:col-span-3 flex items-center justify-between bg-section1 rounded-3xl ">
                         <div class="flex flex-col gap-6 md:gap-8 m-8 ">
                             <img src="c2-assets/dawat-logo.png" alt="dawat-logo" class="w-[246.63px]">
-                            <button class="text-white font-poppins text-base bg-[#63B76D] py-3 px-18  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#">Cook Exotic Dishes</a></button>
-                            <h2 class="text-white font-poppins text-4xl">UP to <span class="font-bold">20% OFF</span></h2>
+                            <button class="text-white font-poppins text-xs md:text-sm lg:text-base bg-[#63B76D] py-2 px-5  md:py-3 md:px-18  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#">Cook Exotic Dishes</a></button>
+                            <h2 class="text-white font-poppins text-2xl md:text-4xl">UP to <span class="font-bold">20% OFF</span></h2>
                         </div>
                         <div>
                             <img src="c2-assets/dawat-mock-up.png" alt="dawat-mock-up" class=" w-full">
@@ -270,8 +258,8 @@
                     <div class="md:col-span-2 flex justify-between items-center bg-section2 rounded-3xl p-6 ">
                         <div class="flex flex-col gap-4 ">
                             <img src="c2-assets/india-gate-logo.png" alt="dawat-logo" class=" w-[93.57px]">
-                            <button class="text-base font-poppins bg-[#2A4D97] text-white py-3 px-10  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#">World’s No.1 Rice</a></button>
-                            <h2 class="text-white font-poppins text-4xl">UP to <span class="font-bold">40% OFF</span></h2>
+                            <button class="text-xs md:text-sm lg:text-base font-poppins bg-[#2A4D97] text-white py-2 px-5 md:py-3 md:px-10  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#">World’s No.1 Rice</a></button>
+                            <h2 class="text-white font-poppins text-2xl md:text-4xl">UP to <span class="font-bold">40% OFF</span></h2>
                         </div>
                         <div >
                             <img src="c2-assets/india-gate-mock-up.png" alt="dawat-mock-up" class=" w-full">
@@ -299,15 +287,15 @@
                         </div> 
                     </div>
                     <!-- lower footer  -->
-                     <div class="flex flex-col gap-12 md:flex-row  md:justify-between md:items-center py-20 mx-4 mb:mx-0">
+                     <div class="flex flex-col gap-12 md:flex-row  md:justify-between md:items-center py-8 md:py-16 mx-4 mb:mx-0">
                         <div class="flex flex-col gap-3">
                             <img src="c2-assets/logo-footer.png" alt="footer-logo" class="w-[150px]">
                             <p class="text-white text-2xl">Discover a world of treats, toys, and <br> essentials handpicked for your furry <br> friends</p>
                         </div>
                         <ul class="flex flex-col gap-4">
-                            <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-auxiliary after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100" ><a href="#" class="no-underline text-white text-xl hover:underline-offset-1 hover:">Product</a></li>
-                            <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-auxiliary after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-white text-xl ">Services</a></li>
-                            <li class="list-none relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-auxiliary after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><a href="#" class="no-underline text-white text-xl ">Contact us</a></li>
+                            <li><a href="#" class=" text-white text-xl   hover:underline  hover:cursor-pointer hover:decoration-white ">Product</a></li>
+                            <li><a href="#" class=" text-white text-xl hover:underline  hover:cursor-pointer hover:decoration-white ">Services</a></li>
+                            <li><a href="#" class=" text-white text-xl hover:underline  hover:cursor-pointer hover:decoration-white ">Contact us</a></li>
                         </ul>
                         <div class="mt-auto">
                             <h3 class="text-base text-white font-medium mb-4">Follow Us</h3>
