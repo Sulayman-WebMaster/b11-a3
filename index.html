@@ -36,6 +36,27 @@
                 max-width: 82.5rem; 
             }
         }
+        /* keyframe for the animation  */
+        @keyframes come {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(0); }
+        }
+        @keyframes go {
+            0% { transform: translateX(100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(0); }
+        }
+        @keyframes stay {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-50px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes anotherstay {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(50px); }
+            100% { transform: translateX(0); }
+        }
     .text-gradient {
       background: linear-gradient(to right, #EFEBE3, #ffffff);
       -webkit-background-clip: text;
@@ -87,10 +108,10 @@
 
             </nav>
            <!-- hero -->
-            <div class="max-w-custom flex flex-col gap-9 items-center justify-items-center mt-20 mx-auto">
+            <div class=" max-w-custom flex flex-col gap-9 items-center justify-items-center mt-20 mx-auto">
                 <div>
-                    <h1 class=" text-4xl md:text-6xl font-semibold text-sidekick text-center">Freshness <span class="text-lead">You Can</span><br>
-                    <span class="text-lead">Count</span> On, Prices You’ll Love!</h1>
+                    <h1 class=" text-3xl md:text-4xl lg:text-6xl font-semibold text-sidekick text-center lg:animate-[come_1.5s_ease-in_forwards,stay_10s_infinite_2s]">Freshness <span class="text-lead">You Can</span></h1><br>
+                    <h1 class="text-3xl md:text-4xl lg:text-6xl font-semibold text-sidekick text-center  lg:animate-[go_1.5s_ease-in_forwards,anotherstay_10s_infinite_2s]"><span class="text-lead">Count</span> On, Prices You’ll Love!</h1>
                     <p class="text-sidekick text-base md:text-xl text-center my-8">Shop your daily essentials at unbeatable prices. From fresh produce to pantry <br> staples, we’ve got you covered every day!</p>
                 </div>
                 <div>
@@ -120,12 +141,32 @@
             
             </div>
         </section>
+        <!-- Request a Product  -->
+         <section class="max-w-custom mx-auto">
+            <h1 class="text-lead text-3xl font-semibold text-start mb-12 mx-4 md:mx-0">Request a product</h1>
+            <div class="flex  mx-auto  justify-around items-center flex-col md:flex-row  ">
+                <div class="flex md:flex-2 justify-center items-center md:items-start md:justify-start mx-auto md:m-0" >
+                    <img src="c2-assets/request.png" alt="requesting person" class="w-3/5 ">
+                </div>
+                <div class="flex flex-col md:flex-1 gap-3  ">
+                    <h3 class="text-center text-lead text-2xl font-bold ">Give your product information</h3>
+                    <input class="placeholder:text-sidekick  placeholder:text-xl bg-auxiliary border decoration-lead py-5 px-10 rounded-lg" type="text" placeholder="Product Name">
+                    <textarea class="bg-auxiliary border decoration-lead py-5 px-10 rounded-lg" name="dec" placeholder="Enter your name"  rows="4">What's you mind...</textarea>
+                    <label for="files">Select your product image from your local storage</label>
+                    <input  type="file" >
+                    <div class="mb-10 md:0">
+                        <button class="text-white text-lg bg-lead py-2 px-9  rounded-lg transition-colors duration-300 hover:text-sidekick hover:bg-auxiliary hover:text-sidekick hover:border hover:border-lead"><a href="#" >Submit</a></button>
+                    </div>
+                </div>
+            </div>
+
+         </section>
          <!-- popular product  -->
           <section class="w-full bg-auxiliary">
             <div class="max-w-custom mx-auto py-32">
                 <h1 class="text-lead text-3xl font-semibold text-start mb-12  mx-4 md:mx-0">Popular Products</h1>
                 <!-- layout -->
-                 <div class="grid grid-cols-2 gap-6 md:grid-cols-5 mx-4 md:mx-0  ">
+                 <div class="grid grid-cols-2 gap-4 lg:gap-6 md:grid-cols-5 mx-4 md:mx-0  ">
                     <div class="col-span-2 row-span-3 flex flex-col gap-2 pt-12 pl-4 md:pl-8 md:pr-1 rounded-xl bg-gradient-to-br from-gradient to-white">
                         <h2 class="text-gradient text-3xl  font-adlam mb-2 md:mb-5 ">30% Off</h2>
                         <p class="text-sidekick text-base">Discover a world of treats, toys, and <br> essentials handpicked for</p>
@@ -149,13 +190,36 @@
                         </div>
                     </div>
                     <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
-                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <img src="c2-assets/tometo.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
                         <div class="flex flex-col gap-1">
                             <div class="flex gap-3 items-center">
                                 <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
                                 <p class="text-sidekick text-base">4.5</p>
                             </div>
-                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">500 g</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/potato.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Patato 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                   
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/tometo.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">500 g</h3>
                             <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
                         </div>
                     </div>
@@ -171,13 +235,24 @@
                         </div>
                     </div>
                     <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
-                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <img src="c2-assets/potato.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
                         <div class="flex flex-col gap-1">
                             <div class="flex gap-3 items-center">
                                 <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
                                 <p class="text-sidekick text-base">4.5</p>
                             </div>
-                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Potato 1KG</h3>
+                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
+                        <img src="c2-assets/tometo.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex gap-3 items-center">
+                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
+                                <p class="text-sidekick text-base">4.5</p>
+                            </div>
+                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Tameto 500g</h3>
                             <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
                         </div>
                     </div>
@@ -192,39 +267,7 @@
                             <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
                         </div>
                     </div>
-                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
-                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
-                        <div class="flex flex-col gap-1">
-                            <div class="flex gap-3 items-center">
-                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
-                                <p class="text-sidekick text-base">4.5</p>
-                            </div>
-                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
-                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
-                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
-                        <div class="flex flex-col gap-1">
-                            <div class="flex gap-3 items-center">
-                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
-                                <p class="text-sidekick text-base">4.5</p>
-                            </div>
-                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
-                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-2 gap-4 bg-white rounded-xl ">
-                        <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
-                        <div class="flex flex-col gap-1">
-                            <div class="flex gap-3 items-center">
-                                <img src="c2-assets/rating.png" alt="rating" class=" w-[18px] h-[18px]">
-                                <p class="text-sidekick text-base">4.5</p>
-                            </div>
-                            <h3 class="text-sidekick font-medium text-xs md:text-sm lg:text-lg">Onion 1KG</h3>
-                            <p class="text-sidekick text-xs lg:text-base" >$59.99</p>
-                        </div>
-                    </div>
+                  
                     <div class="hidden md:flex items-center p-2 gap-4 bg-white rounded-xl ">
                         <img src="c2-assets/onion.png" alt="vegetable item" class=" w-14 h-14 md:w-[80px] md:h-[80px] bg-auxiliary p-2 rounded-lg">
                         <div class="flex flex-col gap-1">
@@ -240,8 +283,8 @@
             </div>
 
           </section>
-          <!-- Arrival & Offers -->
-           <section class="max-w-custom mx-auto">
+          <!--  Arrival & Offers  -->
+          <section class="max-w-custom mx-auto">
             <div class="mt-32 mx-4 md:mx-0">
                 <h1 class="text-lead text-3xl font-semibold text-start mb-12 mx-4 md:mx-0">Arrival & Offers</h1>
                 <div class="grid grid-cols-1  gap-4 md:grid-cols-5  ">
@@ -316,21 +359,6 @@
                 </section>
 
             </footer>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </body>
 </html>
